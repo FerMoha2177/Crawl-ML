@@ -2,6 +2,8 @@ import scrapy
 from scrapy.spiders import CrawlSpider
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import Rule
+import datetime
+
 
 class ABCNewsSpider(CrawlSpider):
     name = "abc_news"
@@ -43,9 +45,5 @@ class ABCNewsSpider(CrawlSpider):
             'date': date_elem,
             'content': content,
             'first_paragraph': first_paragraph,
-            'scraped_at': scrapy.utils.misc.get_timestamp()
+            'scraped_at': datetime.datetime.now().isoformat()
         }
-
-    def parse_start_url(self, response):
-        # Handle the first page differently if needed
-        return self.parse(response)
