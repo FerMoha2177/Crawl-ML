@@ -1,0 +1,4 @@
+venv/
+crawlml/crawlml/__pycache__
+crawlml/crawlml/spiders/__pycache__
+.vscode/
